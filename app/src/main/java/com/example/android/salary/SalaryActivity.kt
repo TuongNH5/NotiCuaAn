@@ -32,11 +32,14 @@ class SalaryActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_salary)
+        initList()
 
+
+    }
+  private fun  initList(){
         val recyclerView = findViewById<RecyclerView>(R.id.category_list)
         recyclerView.layoutManager = LinearLayoutManager(this)
         val adapter = CategoryAdapter(categories)
         recyclerView.adapter = adapter
-
     }
 }
