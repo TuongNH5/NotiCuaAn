@@ -22,10 +22,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        stringViewModel = ViewModelProvider(this)[StringViewModel::class.java]
 
 
         listenerService()
-        stringViewModel = ViewModelProvider(this).get(StringViewModel::class.java)
         val sendStringButton = findViewById<Button>(R.id.sendStringButton)
         val stringEditText = findViewById<EditText>(R.id.stringEditText)
         val responseTextView = findViewById<TextView>(R.id.responseTextView)
