@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.android.R
 
-class Salary : AppCompatActivity() {
+class SalaryActivity : AppCompatActivity() {
     val categories = listOf(
         Category("Category 1", listOf(
             Category("Subcategory 1.1", emptyList()),

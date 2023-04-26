@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".salary.Salary">
+    tools:context=".salary.SalaryActivity">
 
     <!-- res/layout/activity_main.xml -->
     <androidx.recyclerview.widget.RecyclerView
