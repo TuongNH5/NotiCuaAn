@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>File Upload Demo</title>
+</head>
+<body>
+<!-- The image picker choice -->
+<div id="imagePreviewContainer"></div>
+
+<!-- The file input element -->
+<input type="file" id="fileInput" multiple />
+</body>
+<script>
+    function onFilesSelected(files) {
+        // Process the selected files received from Android
+        console.log(files.length)
+        console.log("length" + files.length)
+        if (files && files.length > 0) {
+
+            const imagePreviewContainer = document.getElementById('imagePreviewContainer');
+            imagePreviewContainer.innerHTML = ''; // Clear previous previews
+
+            for (let i = 0; i < files.length; i++) {
+                const file = files[i];
+                const img = document.createElement('img');
+                img.src = URL.createObjectURL(file);
+                img.style.maxWidth = '100%';
+                img.style.maxHeight = '200px';
+                imagePreviewContainer.appendChild(img);
+            }
+        }
+    }
+
+    // Trigger file selection from JavaScript
+    document.getElementById('fileInput').addEventListener('change', function() {
+        // Pass the selected files to the Android app
+        const files = document.getElementById('fileInput').files;
+        Android.onFilesSelected(files);
+        // Clear the file input to allow selecting the same images again
+        document.getElementById('fileInput').value = '';
+    });
+</script>
+</html>
